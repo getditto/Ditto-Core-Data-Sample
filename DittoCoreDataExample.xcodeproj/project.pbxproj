@@ -1,0 +1,439 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08C37B2A03F32D8FCD4C0F97 /* Pods_DittoCoreDataExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFFB40FF6AEA172FAA425F5 /* Pods_DittoCoreDataExample.framework */; };
+		B3323673273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3323672273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift */; };
+		B3323675273F0BAE00E72C43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3323674273F0BAE00E72C43 /* ContentView.swift */; };
+		B3323677273F0BAE00E72C43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3323676273F0BAE00E72C43 /* Assets.xcassets */; };
+		B332367A273F0BAE00E72C43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3323679273F0BAE00E72C43 /* Preview Assets.xcassets */; };
+		B332367C273F0BAE00E72C43 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B332367B273F0BAE00E72C43 /* Persistence.swift */; };
+		B332367F273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B332367D273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld */; };
+		B3323687273F161C00E72C43 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3323685273F161C00E72C43 /* Item.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8E35041FD97BED5E3FBFB293 /* Pods-DittoCoreDataExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DittoCoreDataExample.release.xcconfig"; path = "Target Support Files/Pods-DittoCoreDataExample/Pods-DittoCoreDataExample.release.xcconfig"; sourceTree = "<group>"; };
+		B332366F273F0BAE00E72C43 /* DittoCoreDataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DittoCoreDataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3323672273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DittoCoreDataExampleApp.swift; sourceTree = "<group>"; };
+		B3323674273F0BAE00E72C43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B3323676273F0BAE00E72C43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3323679273F0BAE00E72C43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B332367B273F0BAE00E72C43 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B332367E273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DittoCoreDataExample.xcdatamodel; sourceTree = "<group>"; };
+		B3323685273F161C00E72C43 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = SOURCE_ROOT; };
+		CAFFB40FF6AEA172FAA425F5 /* Pods_DittoCoreDataExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DittoCoreDataExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D62A6AA4F294CDA7CF9C5973 /* Pods-DittoCoreDataExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DittoCoreDataExample.debug.xcconfig"; path = "Target Support Files/Pods-DittoCoreDataExample/Pods-DittoCoreDataExample.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B332366C273F0BAE00E72C43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08C37B2A03F32D8FCD4C0F97 /* Pods_DittoCoreDataExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A342622EA0A718954524E7E4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D62A6AA4F294CDA7CF9C5973 /* Pods-DittoCoreDataExample.debug.xcconfig */,
+				8E35041FD97BED5E3FBFB293 /* Pods-DittoCoreDataExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B3323666273F0BAE00E72C43 = {
+			isa = PBXGroup;
+			children = (
+				B3323671273F0BAE00E72C43 /* DittoCoreDataExample */,
+				B3323670273F0BAE00E72C43 /* Products */,
+				A342622EA0A718954524E7E4 /* Pods */,
+				FBBC8BEDB5553681A74A6026 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B3323670273F0BAE00E72C43 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B332366F273F0BAE00E72C43 /* DittoCoreDataExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3323671273F0BAE00E72C43 /* DittoCoreDataExample */ = {
+			isa = PBXGroup;
+			children = (
+				B3323685273F161C00E72C43 /* Item.swift */,
+				B3323672273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift */,
+				B3323674273F0BAE00E72C43 /* ContentView.swift */,
+				B3323676273F0BAE00E72C43 /* Assets.xcassets */,
+				B332367B273F0BAE00E72C43 /* Persistence.swift */,
+				B332367D273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld */,
+				B3323678273F0BAE00E72C43 /* Preview Content */,
+			);
+			path = DittoCoreDataExample;
+			sourceTree = "<group>";
+		};
+		B3323678273F0BAE00E72C43 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B3323679273F0BAE00E72C43 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FBBC8BEDB5553681A74A6026 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAFFB40FF6AEA172FAA425F5 /* Pods_DittoCoreDataExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B332366E273F0BAE00E72C43 /* DittoCoreDataExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3323682273F0BAE00E72C43 /* Build configuration list for PBXNativeTarget "DittoCoreDataExample" */;
+			buildPhases = (
+				580FE28D6EB45FC8672D9EF2 /* [CP] Check Pods Manifest.lock */,
+				B332366B273F0BAE00E72C43 /* Sources */,
+				B332366C273F0BAE00E72C43 /* Frameworks */,
+				B332366D273F0BAE00E72C43 /* Resources */,
+				7A8632DAD9EF8B52467D1A5B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DittoCoreDataExample;
+			productName = DittoCoreDataExample;
+			productReference = B332366F273F0BAE00E72C43 /* DittoCoreDataExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3323667273F0BAE00E72C43 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					B332366E273F0BAE00E72C43 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+				};
+			};
+			buildConfigurationList = B332366A273F0BAE00E72C43 /* Build configuration list for PBXProject "DittoCoreDataExample" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3323666273F0BAE00E72C43;
+			productRefGroup = B3323670273F0BAE00E72C43 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B332366E273F0BAE00E72C43 /* DittoCoreDataExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B332366D273F0BAE00E72C43 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B332367A273F0BAE00E72C43 /* Preview Assets.xcassets in Resources */,
+				B3323677273F0BAE00E72C43 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		580FE28D6EB45FC8672D9EF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DittoCoreDataExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A8632DAD9EF8B52467D1A5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DittoCoreDataExample/Pods-DittoCoreDataExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DittoCoreDataExample/Pods-DittoCoreDataExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DittoCoreDataExample/Pods-DittoCoreDataExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B332366B273F0BAE00E72C43 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3323687273F161C00E72C43 /* Item.swift in Sources */,
+				B332367F273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld in Sources */,
+				B332367C273F0BAE00E72C43 /* Persistence.swift in Sources */,
+				B3323675273F0BAE00E72C43 /* ContentView.swift in Sources */,
+				B3323673273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B3323680273F0BAE00E72C43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B3323681273F0BAE00E72C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3323683273F0BAE00E72C43 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D62A6AA4F294CDA7CF9C5973 /* Pods-DittoCoreDataExample.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DittoCoreDataExample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = live.ditto.DittoCoreDataExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B3323684273F0BAE00E72C43 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E35041FD97BED5E3FBFB293 /* Pods-DittoCoreDataExample.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DittoCoreDataExample/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = live.ditto.DittoCoreDataExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B332366A273F0BAE00E72C43 /* Build configuration list for PBXProject "DittoCoreDataExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3323680273F0BAE00E72C43 /* Debug */,
+				B3323681273F0BAE00E72C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3323682273F0BAE00E72C43 /* Build configuration list for PBXNativeTarget "DittoCoreDataExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3323683273F0BAE00E72C43 /* Debug */,
+				B3323684273F0BAE00E72C43 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B332367D273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B332367E273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodel */,
+			);
+			currentVersion = B332367E273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodel */;
+			path = DittoCoreDataExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B3323667273F0BAE00E72C43 /* Project object */;
+}
