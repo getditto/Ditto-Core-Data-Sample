@@ -78,8 +78,7 @@ class PersistenceController: NSObject {
         ditto = Ditto(identity: identity, persistenceDirectory: dittoDBURL)
         ditto.isHistoryTrackingEnabled = true
 
-        try! ditto.setLicenseToken("o2d1c2VyX2lkcHJpbGV5QGRpdHRvLmxpdmVmZXhwaXJ5dDIwMjEtMTItMzFUMDA6MDA6MDBaaXNpZ25hdHVyZXhYREx5L3pnNVlteUlSZUNUT21SSTBQQWRBMGVObWY0TUoweDRvMUV4a1hrVnpBOWZqOFNZc3NkSTBhaDMxeTlwY3psendxRTBqaktKSks1WC9SVUZ5TkE9PQ==")
-
+        try! ditto.setLicenseToken("o2d1c2VyX2lkaXNlYXRjaGFydGZleHBpcnl0MjAyMi0xMS0wN1QwMDowMDowMFppc2lnbmF0dXJleFhLWHl4bjhJN0ttVDZITU5ZUVQ1MERCajhVUjFqbXppMlVSNmkzOEx6RHdLYXFvSnJLRzZ6enJmNmRXMGlKekNiK0hGblA0RFFpWFgzN3JVY1MveWlhdz09")
         // MARK: Set up the DittoCoreData mirror:
 
         mirror = DCDMirror(ditto: ditto, managedObjectContext: container.viewContext, bindings: [
