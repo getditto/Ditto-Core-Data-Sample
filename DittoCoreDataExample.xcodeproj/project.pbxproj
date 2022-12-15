@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		08C37B2A03F32D8FCD4C0F97 /* Pods_DittoCoreDataExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFFB40FF6AEA172FAA425F5 /* Pods_DittoCoreDataExample.framework */; };
+		0E2E5637293E832700D3DBB0 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E5636293E832700D3DBB0 /* EditTextView.swift */; };
+		0E2E565D293FB6B600D3DBB0 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E565C293FB6B600D3DBB0 /* Mood.swift */; };
 		B3323673273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3323672273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift */; };
 		B3323675273F0BAE00E72C43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3323674273F0BAE00E72C43 /* ContentView.swift */; };
 		B3323677273F0BAE00E72C43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3323676273F0BAE00E72C43 /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2E5636293E832700D3DBB0 /* EditTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
+		0E2E565C293FB6B600D3DBB0 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		8E35041FD97BED5E3FBFB293 /* Pods-DittoCoreDataExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DittoCoreDataExample.release.xcconfig"; path = "Target Support Files/Pods-DittoCoreDataExample/Pods-DittoCoreDataExample.release.xcconfig"; sourceTree = "<group>"; };
 		B332366F273F0BAE00E72C43 /* DittoCoreDataExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DittoCoreDataExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3323672273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DittoCoreDataExampleApp.swift; sourceTree = "<group>"; };
@@ -73,6 +77,7 @@
 		B3323671273F0BAE00E72C43 /* DittoCoreDataExample */ = {
 			isa = PBXGroup;
 			children = (
+				0E2E5636293E832700D3DBB0 /* EditTextView.swift */,
 				B3323685273F161C00E72C43 /* Item.swift */,
 				B3323672273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift */,
 				B3323674273F0BAE00E72C43 /* ContentView.swift */,
@@ -80,6 +85,7 @@
 				B332367B273F0BAE00E72C43 /* Persistence.swift */,
 				B332367D273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld */,
 				B3323678273F0BAE00E72C43 /* Preview Content */,
+				0E2E565C293FB6B600D3DBB0 /* Mood.swift */,
 			);
 			path = DittoCoreDataExample;
 			sourceTree = "<group>";
@@ -214,9 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2E565D293FB6B600D3DBB0 /* Mood.swift in Sources */,
 				B3323687273F161C00E72C43 /* Item.swift in Sources */,
 				B332367F273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld in Sources */,
 				B332367C273F0BAE00E72C43 /* Persistence.swift in Sources */,
+				0E2E5637293E832700D3DBB0 /* EditTextView.swift in Sources */,
 				B3323675273F0BAE00E72C43 /* ContentView.swift in Sources */,
 				B3323673273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift in Sources */,
 			);

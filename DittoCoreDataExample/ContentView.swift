@@ -23,7 +23,7 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
 
@@ -32,12 +32,15 @@ struct ContentView: View {
             List {
                 ForEach(items) { item in
                     VStack {
+//                        Text(item.custom?.mood ?? "No mood")
+//                        Text(item.defectId ?? "No id")
+
                         HStack {
-                            Text(item.text ?? "Value")
+                            Text(item.status ?? "Value")
                             NavigationLink {
-                                Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                                Text("Item at \(item.date ?? Date(), formatter: itemFormatter)")
                             } label: {
-                                Text(item.timestamp!, formatter: itemFormatter)
+                                Text(item.date ?? Date(), formatter: itemFormatter)
                             }
                         }.onTapGesture {
                             viewModel.selecteditemId = item.id
@@ -61,7 +64,7 @@ struct ContentView: View {
                 if let selected = viewModel.selecteditemId {
                     let item = items.filter({ $0.id == selected }).first
                     if let item = item {
-                        EditTextView(text: item.text, { text in
+                        EditTextView(text: item.status, { text in
                             saveText(item: item, text: text)
                         })
                     }
@@ -77,7 +80,9 @@ struct ContentView: View {
         withAnimation {
             
             if let it = items.filter({ $0.id == item.id }).first {
-                it.text = text
+                it.status = text
+//                it.custom?.mood = "happy"
+//                it.defectId = "123abc"
             }
 
             do {
@@ -94,7 +99,8 @@ struct ContentView: View {
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            newItem.date = Date()
+//            newItem.custom?.mood = "happy"
 
             do {
                 try viewContext.save()

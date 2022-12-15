@@ -11,6 +11,7 @@ import CoreData
 
 @objc(Item)
 public class Item: NSManagedObject {
+    
     public override func awakeFromInsert() {
         self.id = UUID()
     }
