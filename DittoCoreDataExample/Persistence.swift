@@ -12,23 +12,23 @@ import DittoCoreData
 class PersistenceController: NSObject {
     static let shared = PersistenceController()
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
+//    static var preview: PersistenceController = {
+//        let result = PersistenceController(inMemory: true)
+//        let viewContext = result.container.viewContext
+//        for _ in 0..<10 {
+//            let newItem = Item(context: viewContext)
+//            newItem.date = Date()
+//        }
+//        do {
+//            try viewContext.save()
+//        } catch {
+//            // Replace this implementation with code to handle the error appropriately.
+//            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//            let nsError = error as NSError
+//            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//        }
+//        return result
+//    }()
 
     let container: NSPersistentContainer
     let ditto: Ditto
@@ -71,14 +71,16 @@ class PersistenceController: NSObject {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
+        self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
 
         // MARK: Set up the Ditto instance:
 
-        let identity = DittoIdentity.offlinePlayground(appID: "live.ditto.CoreDataExample")
+        let identity = DittoIdentity.offlinePlayground(appID: "2f5619b5-7660-46df-ae10-189b80cf184e")
         ditto = Ditto(identity: identity, persistenceDirectory: dittoDBURL)
         ditto.isHistoryTrackingEnabled = true
 
-        try! ditto.setLicenseToken("o2d1c2VyX2lkaXNlYXRjaGFydGZleHBpcnl0MjAyMi0xMS0wN1QwMDowMDowMFppc2lnbmF0dXJleFhLWHl4bjhJN0ttVDZITU5ZUVQ1MERCajhVUjFqbXppMlVSNmkzOEx6RHdLYXFvSnJLRzZ6enJmNmRXMGlKekNiK0hGblA0RFFpWFgzN3JVY1MveWlhdz09")
+        try! ditto.setLicenseToken("o2d1c2VyX2lkcXdhbGtlckBkaXR0by5saXZlZmV4cGlyeXgYMjAyMy0wMi0yMlQyMDoyODo1OS4xODRaaXNpZ25hdHVyZXhYR0hjNzJCY2ozMHR5cEVKL3lRNGd5VFlUZ2xZSGw3cVFwTzdGeVdWUlNsZWNzb0JlRlhKTjlHUW05RnYrYkNWQUNrUmtrUzIrZXBQZllPbGJ0bW5XeVE9PQ==")
         // MARK: Set up the DittoCoreData mirror:
 
         mirror = DCDMirror(ditto: ditto, managedObjectContext: container.viewContext, bindings: [
@@ -93,7 +95,7 @@ class PersistenceController: NSObject {
             // each entity and set it to `UUID()` in the awakeFromInsert()
             // method of the corresponding entity. This is exactly what we did
             // for the Item entity, see Item.swift and the CoreData model.
-            DCDBinding(entity: Item.entity(), idAttributeName: "id"),
+            DCDBinding(entity: Country.entity(), idAttributeName: "id"),
         ])
 
         super.init()

@@ -23,110 +23,125 @@ struct ContentView: View {
     
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.date, ascending: true)],
+        sortDescriptors: [],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var countries: FetchedResults<Country>
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    VStack {
-//                        Text(item.custom?.mood ?? "No mood")
-//                        Text(item.defectId ?? "No id")
-
-                        HStack {
-                            Text(item.status ?? "Value")
-                            NavigationLink {
-                                Text("Item at \(item.date ?? Date(), formatter: itemFormatter)")
-                            } label: {
-                                Text(item.date ?? Date(), formatter: itemFormatter)
+            VStack {
+                List {
+                    ForEach (countries, id: \.self) { country in
+                        Section(country.wrappedFullName) {
+                            ForEach(country.candyArray, id: \.self) { candy in
+                                Text(candy.wrappedName)
                             }
-                        }.onTapGesture {
-                            viewModel.selecteditemId = item.id
-                            viewModel.shouldShowEditText = true
                         }
                     }
                 }
-                .onDelete(perform: deleteItems)
+                
+                Button("Add") {
+                    let candy1 = Candy(context: viewContext)
+                    candy1.name = "Mars"
+                    candy1.orgin = Country(context: viewContext)
+                    candy1.orgin?.shortName = "UK"
+                    candy1.orgin?.fullName = "United Kingdom"
+
+                    let candy2 = Candy(context: viewContext)
+                    candy2.name = "KitKat"
+                    candy2.orgin = Country(context: viewContext)
+                    candy2.orgin?.shortName = "UK"
+                    candy2.orgin?.fullName = "United Kingdom"
+
+                    let candy3 = Candy(context: viewContext)
+                    candy3.name = "Twix"
+                    candy3.orgin = Country(context: viewContext)
+                    candy3.orgin?.shortName = "UK"
+                    candy3.orgin?.fullName = "United Kingdom"
+
+                    let candy4 = Candy(context: viewContext)
+                    candy4.name = "Toblerone"
+                    candy4.orgin = Country(context: viewContext)
+                    candy4.orgin?.shortName = "CH"
+                    candy4.orgin?.fullName = "Switzerland"
+
+                    try? viewContext.save()
+                }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            .sheet(isPresented: $viewModel.shouldShowEditText, content: {
-                if let selected = viewModel.selecteditemId {
-                    let item = items.filter({ $0.id == selected }).first
-                    if let item = item {
-                        EditTextView(text: item.status, { text in
-                            saveText(item: item, text: text)
-                        })
-                    }
-                }
-            })
-            Text("Select an item")
+//            .toolbar {
+//                ToolbarItem(placement: .navigationBarTrailing) {
+//                    EditButton()
+//                }
+//                ToolbarItem {
+//                    Button(action: addItem) {
+//                        Label("Add Item", systemImage: "plus")
+//                    }
+//                }
+//            }
+//            .sheet(isPresented: $viewModel.shouldShowEditText, content: {
+//                if let selected = viewModel.selecteditemId {
+//                    let item = items.filter({ $0.id == selected }).first
+//                    if let item = item {
+//                        EditTextView(text: item.status, { text in
+//                            saveText(item: item, text: text)
+//                        })
+//                    }
+//                }
+//            })
+//            Text("Select an item")
         }
         .navigationViewStyle(StackNavigationViewStyle())
 
     }
     
-    func saveText(item: Item, text: String) {
-        withAnimation {
-            
-            if let it = items.filter({ $0.id == item.id }).first {
-                it.status = text
-//                it.custom?.mood = "happy"
-//                it.defectId = "123abc"
-            }
+//    func saveText(item: Item, text: String) {
+//        withAnimation {
+//
+//            if let it = items.filter({ $0.id == item.id }).first {
+//                it.status = text
+//            }
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+//    private func addItem() {shouldShowEditText
+//        withAnimation {
+//            let newItem = Item(context: viewContext)
+//            newItem.date = Date()
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.date = Date()
-//            newItem.custom?.mood = "happy"
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
+//    private func deleteItems(offsets: IndexSet) {
+//        withAnimation {
+//            offsets.map { items[$0] }.forEach(viewContext.delete)
+//
+//            do {
+//                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
+//        }
+//    }
 }
 
 private let itemFormatter: DateFormatter = {
@@ -136,8 +151,8 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+//    }
+//}
