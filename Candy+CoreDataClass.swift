@@ -11,5 +11,7 @@ import CoreData
 
 @objc(Candy)
 public class Candy: NSManagedObject {
-
+    public override func awakeFromInsert() {
+        self.id = UUID()
+    }
 }

@@ -11,5 +11,7 @@ import CoreData
 
 @objc(Country)
 public class Country: NSManagedObject {
-
+    public override func awakeFromInsert() {
+        self.id = UUID()
+    }
 }

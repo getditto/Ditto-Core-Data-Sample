@@ -16,6 +16,7 @@ extension Candy {
         return NSFetchRequest<Candy>(entityName: "Candy")
     }
     
+    @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var orgin: Country?
     

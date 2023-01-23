@@ -16,6 +16,7 @@ extension Country {
         return NSFetchRequest<Country>(entityName: "Country")
     }
 
+    @NSManaged public var id: UUID?
     @NSManaged public var fullName: String?
     @NSManaged public var shortName: String?
     @NSManaged public var candy: NSSet?
