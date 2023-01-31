@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08C37B2A03F32D8FCD4C0F97 /* Pods_DittoCoreDataExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFFB40FF6AEA172FAA425F5 /* Pods_DittoCoreDataExample.framework */; };
-		0E2E5637293E832700D3DBB0 /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E5636293E832700D3DBB0 /* EditTextView.swift */; };
-		0E2E565D293FB6B600D3DBB0 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2E565C293FB6B600D3DBB0 /* Mood.swift */; };
+		0E2192F32981A32900070B11 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 0E2192F22981A32900070B11 /* OrderedCollections */; };
 		0E937518297B6116008BD126 /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937514297B6116008BD126 /* Country+CoreDataClass.swift */; };
 		0E937519297B6116008BD126 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937515297B6116008BD126 /* Country+CoreDataProperties.swift */; };
 		0E93751A297B6116008BD126 /* Candy+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E937516297B6116008BD126 /* Candy+CoreDataClass.swift */; };
@@ -23,8 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E2E5636293E832700D3DBB0 /* EditTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
-		0E2E565C293FB6B600D3DBB0 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		0E937514297B6116008BD126 /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		0E937515297B6116008BD126 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		0E937516297B6116008BD126 /* Candy+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Candy+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -47,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2192F32981A32900070B11 /* OrderedCollections in Frameworks */,
 				08C37B2A03F32D8FCD4C0F97 /* Pods_DittoCoreDataExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,14 +87,12 @@
 				0E937515297B6116008BD126 /* Country+CoreDataProperties.swift */,
 				0E937516297B6116008BD126 /* Candy+CoreDataClass.swift */,
 				0E937517297B6116008BD126 /* Candy+CoreDataProperties.swift */,
-				0E2E5636293E832700D3DBB0 /* EditTextView.swift */,
 				B3323672273F0BAE00E72C43 /* DittoCoreDataExampleApp.swift */,
 				B3323674273F0BAE00E72C43 /* ContentView.swift */,
 				B3323676273F0BAE00E72C43 /* Assets.xcassets */,
 				B332367B273F0BAE00E72C43 /* Persistence.swift */,
 				B332367D273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld */,
 				B3323678273F0BAE00E72C43 /* Preview Content */,
-				0E2E565C293FB6B600D3DBB0 /* Mood.swift */,
 			);
 			path = DittoCoreDataExample;
 			sourceTree = "<group>";
@@ -135,6 +131,9 @@
 			dependencies = (
 			);
 			name = DittoCoreDataExample;
+			packageProductDependencies = (
+				0E2192F22981A32900070B11 /* OrderedCollections */,
+			);
 			productName = DittoCoreDataExample;
 			productReference = B332366F273F0BAE00E72C43 /* DittoCoreDataExample.app */;
 			productType = "com.apple.product-type.application";
@@ -163,6 +162,9 @@
 				Base,
 			);
 			mainGroup = B3323666273F0BAE00E72C43;
+			packageReferences = (
+				0E2192F12981A32900070B11 /* XCRemoteSwiftPackageReference "swift-collections" */,
+			);
 			productRefGroup = B3323670273F0BAE00E72C43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,11 +233,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E2E565D293FB6B600D3DBB0 /* Mood.swift in Sources */,
 				0E93751B297B6116008BD126 /* Candy+CoreDataProperties.swift in Sources */,
 				B332367F273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld in Sources */,
 				B332367C273F0BAE00E72C43 /* Persistence.swift in Sources */,
-				0E2E5637293E832700D3DBB0 /* EditTextView.swift in Sources */,
 				0E937519297B6116008BD126 /* Country+CoreDataProperties.swift in Sources */,
 				0E937518297B6116008BD126 /* Country+CoreDataClass.swift in Sources */,
 				B3323675273F0BAE00E72C43 /* ContentView.swift in Sources */,
@@ -453,6 +453,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0E2192F12981A32900070B11 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0E2192F22981A32900070B11 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0E2192F12981A32900070B11 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B332367D273F0BAE00E72C43 /* DittoCoreDataExample.xcdatamodeld */ = {

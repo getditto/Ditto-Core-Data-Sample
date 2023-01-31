@@ -2,7 +2,7 @@
 //  Candy+CoreDataProperties.swift
 //  DittoCoreDataExample
 //
-//  Created by Walker Erekson on 1/20/23.
+//  Created by Walker Erekson on 1/25/23.
 //
 //
 
@@ -11,18 +11,20 @@ import CoreData
 
 
 extension Candy {
-    
+
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Candy> {
         return NSFetchRequest<Candy>(entityName: "Candy")
     }
-    
+
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
+    @NSManaged public var date: Date?
     @NSManaged public var orgin: Country?
     
     public var wrappedName: String {
-        name ?? "Unkown Candy"
+        name ?? "Unknown Candy"
     }
+    
 
 }
 

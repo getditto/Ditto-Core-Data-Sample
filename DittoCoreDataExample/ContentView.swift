@@ -35,6 +35,7 @@ struct ContentView: View {
                         Section(country.wrappedFullName) {
                             ForEach(country.candyArray, id: \.self) { candy in
                                 Text(candy.wrappedName)
+                                Text(DateFormatter().string(from: candy.date!))
                             }
                         }
                     }
@@ -68,27 +69,6 @@ struct ContentView: View {
                     try? viewContext.save()
                 }
             }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    EditButton()
-//                }
-//                ToolbarItem {
-//                    Button(action: addItem) {
-//                        Label("Add Item", systemImage: "plus")
-//                    }
-//                }
-//            }
-//            .sheet(isPresented: $viewModel.shouldShowEditText, content: {
-//                if let selected = viewModel.selecteditemId {
-//                    let item = items.filter({ $0.id == selected }).first
-//                    if let item = item {
-//                        EditTextView(text: item.status, { text in
-//                            saveText(item: item, text: text)
-//                        })
-//                    }
-//                }
-//            })
-//            Text("Select an item")
         }
         .navigationViewStyle(StackNavigationViewStyle())
 
