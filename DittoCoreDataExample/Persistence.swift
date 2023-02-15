@@ -95,6 +95,7 @@ class PersistenceController: NSObject {
             // method of the corresponding entity. This is exactly what we did
             // for the Item entity, see Item.swift and the CoreData model.
             DCDBinding(entity: Country.entity(), idAttributeName: "id"),
+            DCDBinding(entity: Candy.entity(), idAttributeName: "id"),
         ])
 
         super.init()
