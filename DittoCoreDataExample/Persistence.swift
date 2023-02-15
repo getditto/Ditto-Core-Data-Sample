@@ -55,7 +55,7 @@ class PersistenceController: NSObject {
         persistentStoreDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         persistentStoreDescription.url = inMemory ? URL(fileURLWithPath: "/dev/null") : coreDataDBURL
 
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -70,7 +70,7 @@ class PersistenceController: NSObject {
                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         
         self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
 
