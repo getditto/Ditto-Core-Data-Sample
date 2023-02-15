@@ -77,10 +77,9 @@ class PersistenceController: NSObject {
         // MARK: Set up the Ditto instance:
 
         let identity = DittoIdentity.offlinePlayground(appID: "2f5619b5-7660-46df-ae10-189b80cf184e")
-        ditto = Ditto(identity: identity, persistenceDirectory: dittoDBURL)
-        ditto.isHistoryTrackingEnabled = true
+        ditto = Ditto(identity: identity, historyTrackingEnabled: true, persistenceDirectory: dittoDBURL)
 
-        try! ditto.setLicenseToken("o2d1c2VyX2lkcXdhbGtlckBkaXR0by5saXZlZmV4cGlyeXgYMjAyMy0wMi0yMlQyMDoyODo1OS4xODRaaXNpZ25hdHVyZXhYR0hjNzJCY2ozMHR5cEVKL3lRNGd5VFlUZ2xZSGw3cVFwTzdGeVdWUlNsZWNzb0JlRlhKTjlHUW05RnYrYkNWQUNrUmtrUzIrZXBQZllPbGJ0bW5XeVE9PQ==")
+        try! ditto.setOfflineOnlyLicenseToken("o2d1c2VyX2lkcXdhbGtlckBkaXR0by5saXZlZmV4cGlyeXgYMjAyMy0wMi0yMlQyMDoyODo1OS4xODRaaXNpZ25hdHVyZXhYR0hjNzJCY2ozMHR5cEVKL3lRNGd5VFlUZ2xZSGw3cVFwTzdGeVdWUlNsZWNzb0JlRlhKTjlHUW05RnYrYkNWQUNrUmtrUzIrZXBQZllPbGJ0bW5XeVE9PQ==")
         // MARK: Set up the DittoCoreData mirror:
 
         mirror = DCDMirror(ditto: ditto, managedObjectContext: container.viewContext, bindings: [
@@ -105,8 +104,8 @@ class PersistenceController: NSObject {
 
         var transportConfig = DittoTransportConfig()
         transportConfig.enableAllPeerToPeer()
-        ditto.setTransportConfig(config: transportConfig)
-        try! ditto.tryStartSync()
+        ditto.transportConfig = transportConfig
+        try! ditto.startSync()
     }
 }
 
