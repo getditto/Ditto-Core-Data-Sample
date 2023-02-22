@@ -1,13 +1,13 @@
 PODS:
-  - DittoCoreData (1.0.15-experimental.ditto-core-data.1):
-    - DittoObjC (= 1.0.15-experimental.ditto-core-data.1)
-    - DittoSwift (= 1.0.15-experimental.ditto-core-data.1)
-  - DittoObjC (1.0.15-experimental.ditto-core-data.1)
-  - DittoSwift (1.0.15-experimental.ditto-core-data.1):
-    - DittoObjC (= 1.0.15-experimental.ditto-core-data.1)
+  - DittoCoreData (3.0.4-experimental.ditto-core-data.1):
+    - DittoObjC (= 3.0.4-experimental.ditto-core-data.1)
+    - DittoSwift (= 3.0.4-experimental.ditto-core-data.1)
+  - DittoObjC (3.0.4-experimental.ditto-core-data.1)
+  - DittoSwift (3.0.4-experimental.ditto-core-data.1):
+    - DittoObjC (= 3.0.4-experimental.ditto-core-data.1)
 
 DEPENDENCIES:
-  - DittoCoreData (= 1.0.15-experimental.ditto-core-data.1)
+  - DittoCoreData (= 3.0.4-experimental.ditto-core-data.1)
 
 SPEC REPOS:
   trunk:
@@ -16,10 +16,10 @@ SPEC REPOS:
     - DittoSwift
 
 SPEC CHECKSUMS:
-  DittoCoreData: a8cce94f8e863f90d81591781babd0f1b92cdda8
-  DittoObjC: 41095d1e6ac88e68c3e79199306f44e1e6ffeca9
-  DittoSwift: 04a294d26b7e50f1f421313c1bc6a1f1a6cf8fa1
+  DittoCoreData: d3b288bd8386e7fa52866d31f2cab9d6d4b020cf
+  DittoObjC: 2c46691730fa64233e3797e44ca5e683c2aca27f
+  DittoSwift: 9dff3c54571f42e94ce94ac150c815d46b77b724
 
-PODFILE CHECKSUM: 4b843b366d9d25b7b1c516a443facdfd4260a3a7
+PODFILE CHECKSUM: 586d3e9cc1bd13d92836ab3fb9c5f36269cf8204
 
 COCOAPODS: 1.11.3

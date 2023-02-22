@@ -35,7 +35,7 @@ struct ContentView: View {
                         Section(country.wrappedFullName) {
                             ForEach(country.candyArray, id: \.self) { candy in
                                 Text(candy.wrappedName)
-                                Text(DateFormatter().string(from: candy.date!))
+                                Text(DateFormatter().string(from: candy.date ?? Date(timeIntervalSince1970: 0)))
                             }
                         }
                     }

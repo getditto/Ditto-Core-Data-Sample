@@ -55,7 +55,7 @@ class PersistenceController: NSObject {
         persistentStoreDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
         persistentStoreDescription.url = inMemory ? URL(fileURLWithPath: "/dev/null") : coreDataDBURL
 
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -70,17 +70,16 @@ class PersistenceController: NSObject {
                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         
         self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
 
         // MARK: Set up the Ditto instance:
 
         let identity = DittoIdentity.offlinePlayground(appID: "2f5619b5-7660-46df-ae10-189b80cf184e")
-        ditto = Ditto(identity: identity, persistenceDirectory: dittoDBURL)
-        ditto.isHistoryTrackingEnabled = true
+        ditto = Ditto(identity: identity, historyTrackingEnabled: true, persistenceDirectory: dittoDBURL)
 
-        try! ditto.setLicenseToken("o2d1c2VyX2lkcXdhbGtlckBkaXR0by5saXZlZmV4cGlyeXgYMjAyMy0wMi0yMlQyMDoyODo1OS4xODRaaXNpZ25hdHVyZXhYR0hjNzJCY2ozMHR5cEVKL3lRNGd5VFlUZ2xZSGw3cVFwTzdGeVdWUlNsZWNzb0JlRlhKTjlHUW05RnYrYkNWQUNrUmtrUzIrZXBQZllPbGJ0bW5XeVE9PQ==")
+        try! ditto.setOfflineOnlyLicenseToken("o2d1c2VyX2lkcXdhbGtlckBkaXR0by5saXZlZmV4cGlyeXgYMjAyMy0wMi0yMlQyMDoyODo1OS4xODRaaXNpZ25hdHVyZXhYR0hjNzJCY2ozMHR5cEVKL3lRNGd5VFlUZ2xZSGw3cVFwTzdGeVdWUlNsZWNzb0JlRlhKTjlHUW05RnYrYkNWQUNrUmtrUzIrZXBQZllPbGJ0bW5XeVE9PQ==")
         // MARK: Set up the DittoCoreData mirror:
 
         mirror = DCDMirror(ditto: ditto, managedObjectContext: container.viewContext, bindings: [
@@ -96,6 +95,7 @@ class PersistenceController: NSObject {
             // method of the corresponding entity. This is exactly what we did
             // for the Item entity, see Item.swift and the CoreData model.
             DCDBinding(entity: Country.entity(), idAttributeName: "id"),
+            DCDBinding(entity: Candy.entity(), idAttributeName: "id"),
         ])
 
         super.init()
@@ -105,8 +105,8 @@ class PersistenceController: NSObject {
 
         var transportConfig = DittoTransportConfig()
         transportConfig.enableAllPeerToPeer()
-        ditto.setTransportConfig(config: transportConfig)
-        try! ditto.tryStartSync()
+        ditto.transportConfig = transportConfig
+        try! ditto.startSync()
     }
 }
 
